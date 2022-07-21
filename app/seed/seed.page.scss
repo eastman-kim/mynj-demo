@@ -1,0 +1,113 @@
+.header-title {
+  font-weight: bold;
+  font-size: 14px;
+  text-align: left;
+  margin-left: 5px;
+  padding: 20px;
+}
+
+.shoutout-container {
+  .shoutout-wrapper {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .text {
+    margin-top: 5px;
+  }
+}
+
+.seed-container {
+  .image-wrapper {
+    width: 100%;
+
+    img {
+      border-radius: 10px;
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      object-position: 30%;
+    }
+
+    .rating {
+      border-radius: 8px;
+      padding-top: 2px;
+      padding-bottom: 2px;
+      padding-left: 8px;
+      padding-right: 8px;
+      font-size: 12px;
+      color: white;
+      text-align: center;
+      position: absolute;
+      z-index: 99;
+      top: 2%;
+      left: 3%;
+      background: orange;
+    }
+
+    .counts {
+      border-radius: 8px;
+      padding-top: 2px;
+      padding-bottom: 2px;
+      padding-left: 8px;
+      padding-right: 8px;
+      font-size: 12px;
+      color: rgb(61, 61, 61);
+      text-align: center;
+      position: absolute;
+      z-index: 99;
+      top: 2%;
+      left: 18%;
+      background: whitesmoke;
+    }
+  }
+
+  .description-container {
+    width: 100%;
+    background-color: white;
+    padding-bottom: 0px;
+
+    .type-wrapper {
+      display: flex;
+      padding-top: 5px;
+      padding-bottom: 5px;
+
+      .types {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+
+        .type {
+          color: rgb(75, 75, 75);
+          font-weight: 500;
+          margin-right: 3px;
+        }
+      }
+    }
+
+    .farm-wrapper {
+      display: flex;
+      align-items: center;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-top: 0px;
+      padding-bottom: 10px;
+
+      .avatar {
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        object-fit: cover;
+        padding: 0px;
+      }
+
+      .text {
+        margin-left: 5px;
+        font-size: 12px;
+        color: rgb(75, 75, 75);
+      }
+    }
+  }
+}

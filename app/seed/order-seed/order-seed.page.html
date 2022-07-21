@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button defaultHref="/tabs/nongjang"></ion-back-button>
+    </ion-buttons>
+    <ion-title> 씨앗 둘러보기 </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <swiper [config]="swiperConfig">
+    <ng-template swiperSlide *ngFor="let seed of seedList">
+      <ion-grid class="seed-container">
+        <ion-card>
+
+          <!--Card: Image-->
+          <div class="image-wrapper">
+            <img [src]="seed.imgUrl" />
+          <!--Card: Expected Date-->
+            <div>
+              <div class="day-circle"> D-33</div>
+            </div>
+          </div>
+
+          <div class="description-wrapper">
+            <ion-card-content class="type-wrapper">
+            <!--Card: Seed Information-->
+              <div>
+                <ion-card-title>
+                  <h1 class="text-size-lg text-color-primary">
+                    {{seed.subtype}}
+                  </h1>
+                </ion-card-title>
+                <p class="text-size-xs text-color-secondary">
+                  {{seed.type}}
+                </p>
+              </div>
+              <div style="text-align: right;">
+                <p>
+                  파릇파릇님 외 18명 참여 중 <br>
+                  남은 수량: 3개
+                </p>
+
+              </div>
+            </ion-card-content>
+
+            <!--Card: Farmer Information-->
+            <ion-item class="farmer-wrapper" lines="none">
+              <ion-avatar slot="start">
+                <img [src]="seed.imgUrl" />
+              </ion-avatar>
+              <ion-label>
+                <h3 class="text-size-sm ion-no-margin">
+                  {{seed.farmerTitle}}
+                </h3>
+                <p class="text-size-p ion-no-margin" style="font-size: x-small;">
+                  {{seed.farmerSubtitle}}
+                </p>
+              </ion-label>
+              <ion-button class="button-small color-primary no-box-shadow to-follow" slot="end"
+                [routerLink]="['/', 'tabs', 'seed', seed.id]">
+                농장 선택
+              </ion-button>
+            </ion-item>
+          </div>
+
+        </ion-card>
+      </ion-grid>
+    </ng-template>
+  </swiper>
+</ion-content>

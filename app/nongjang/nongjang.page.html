@@ -1,0 +1,41 @@
+<ion-header #header [translucent]="true">
+  <ion-toolbar color="translucent">
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon class="header-icon" name="scan-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="header-title"> 마이농장 </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true" scrollEvents="true" [appHideHeader]="header">
+  <!-- Search Bar -->
+  <app-search-bar> </app-search-bar>
+
+  <ion-grid class="nongjang-container" *ngFor="let nj of nongjangs" [routerLink]="['/', 'tabs', 'nongjang', 'nongjang-detail']">
+    <ion-card class="nongjang-wrapper">
+      <!--Card: Image-->
+      <img [src]="nj.imgUrl" class="nj-img" />
+      <ion-card-content class="content-wrapper">
+      <!--Card: Title-->
+        <div class="title-wrapper">
+          <ion-card-title>
+            <p class="farm-title"> {{nj.farmTitle}} </p>
+          </ion-card-title>
+          <p style="margin-left: 5px">{{nj.location}}</p>
+        </div>
+      <!--Card: Description-->
+        <div class="info-wrapper">
+          <p class="farm-subtitle">
+            {{nj.farmSubtitle}}
+          </p>
+          <p class="area-size">
+            {{nj.areaSize| number}}m<sup>2</sup>
+          </p>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </ion-grid>
+</ion-content>

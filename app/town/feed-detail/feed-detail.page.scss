@@ -1,0 +1,44 @@
+.feed-container {
+  padding-left: 0px;
+  padding-right: 0px;
+
+  .feed-content {
+    justify-content: center;
+    align-items: center;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    img {
+      max-width: 90%;
+      border-radius: 10px;
+
+      align-items: center;
+    }
+
+    .warning-wrapper {
+      display: flex;
+      align-items: center;
+
+      .warning-sentence {
+        font-size: x-small;
+        color: rgb(161, 161, 161);
+        margin: 0;
+      }
+    }
+  }
+
+  .buttons {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    border-top: 1px solid rgb(241, 241, 241);
+    border-bottom: 1px solid rgb(219, 219, 219);
+
+    .icon-color,
+    .label-color {
+      color: grey;
+    }
+  }
+}

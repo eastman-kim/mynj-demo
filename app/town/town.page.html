@@ -1,0 +1,58 @@
+<ion-header #header [translucent]="true">
+  <ion-toolbar color="translucent">
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon class="header-icon" name="scan-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="header-title"> 마이마을 </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" scrollEvents="true" [appHideHeader]="header">
+  <ion-grid class="feed-container">
+    <ion-card class="feed-wrapper" *ngFor="let f of feeds" [routerLink]="['/', 'tabs', 'town', f.id]">
+      <ion-card-content class="ion-no-padding">
+        <!-- Card: Date -->
+        <ion-row>
+          <ion-col class="date">
+            {{f.date}}
+          </ion-col>
+        </ion-row>
+
+        <!-- Card: Nickname, Content -->
+        <ion-col class="nickname">
+          <ion-text> {{f.nickname}} </ion-text>
+        </ion-col>
+        <ion-row>
+          <ion-col class="content">
+            <ion-text> {{f.content}} </ion-text>
+          </ion-col>
+        </ion-row>
+
+        <!-- Card: Image -->
+        <img [src]="f.imgUrl" *ngIf="f.imgUrl" class="image">
+
+        <!-- Card: Comments, Likes Button -->
+        <ion-buttons>
+          <ion-button>
+            <ion-icon name="chatbubble-ellipses-outline" class="icon"></ion-icon>
+            <ion-label class="label"> {{f.comments}} </ion-label>
+          </ion-button>
+          <ion-button>
+            <ion-icon name="heart-outline" class="icon"></ion-icon>
+            <ion-label class="label"> {{f.likes}} </ion-label>
+          </ion-button>
+        </ion-buttons>
+      </ion-card-content>
+    </ion-card>
+  </ion-grid>
+
+
+  <!-- Button: Floating -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="primary">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

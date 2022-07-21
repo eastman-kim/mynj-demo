@@ -1,0 +1,74 @@
+<ion-header #header [translucent]="true">
+  <ion-toolbar color="translucent">
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon class="header-icon" name="scan-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="header-title"> 마이광장 </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" scrollEvents="true" [appHideHeader]="header">
+
+  <!-- Magazine of the Month -->
+  <div class="magazine-header">
+    <ion-text> 이달의 매거진 </ion-text>
+  </div>
+  <ion-grid class="magazine-container" [routerLink]="['/', 'tabs', 'magazine', 'monthly-magazine']">
+    <ion-card class="magazine-wrapper">
+      <img class="cover" src="../../assets/images/herbs2.jpg">
+      <ion-card-content class="content">
+        <div class="profile">
+          <ion-avatar class="avatar">
+            <ion-img src="../../assets/images/farmer.jpg"></ion-img>
+          </ion-avatar>
+          <ion-avatar class="avatar">
+            <ion-img src="../../assets/images/apple.jpg"></ion-img>
+          </ion-avatar>
+          <ion-avatar class="avatar">
+            <ion-img src="../../assets/images/strawberry.jpg"></ion-img>
+          </ion-avatar>
+          <ion-avatar class="avatar">
+            <ion-img src="../../assets/images/hallabong.jpg"></ion-img>
+          </ion-avatar>
+          <ion-avatar class="avatar">
+            <ion-img src="../../assets/images/herbs2.jpg"></ion-img>
+          </ion-avatar>
+          <p> + 13</p>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </ion-grid>
+
+
+  <!-- Ongoing Magazine -->
+  <div class="magazine-header">
+    <ion-text> 진행 중인 매거진 </ion-text>
+  </div>
+  <ion-grid class="magazine-ongoing-container">
+    <ion-slides [options]="swiperConfig">
+      <ion-slide *ngFor="let magazine of magazines" class="magazine-slide" [routerLink]="['/', 'tabs', 'magazine', 'magazine-in-progress']">
+        <ion-grid class="magazine-wrapper">
+          <ion-card style="margin: 0px;">
+            <img class="cover" src="../../assets/images/may_mag.jpg">
+            <ion-card-content class="content">
+              <div class="profile">
+                <ion-avatar class="avatar">
+                  <ion-img src="../../assets/images/strawberry.jpg"></ion-img>
+                </ion-avatar>
+                <ion-avatar class="avatar">
+                  <ion-img src="../../assets/images/hallabong.jpg"></ion-img>
+                </ion-avatar>
+                <ion-avatar class="avatar">
+                  <ion-img src="../../assets/images/herbs2.jpg"></ion-img>
+                </ion-avatar>
+              </div>
+            </ion-card-content>
+          </ion-card>
+        </ion-grid>
+      </ion-slide>
+    </ion-slides>
+  </ion-grid>
+
+</ion-content>

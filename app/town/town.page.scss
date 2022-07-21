@@ -1,0 +1,69 @@
+.header-title {
+  font-weight: bold;
+  font-size: 14px;
+  text-align: left;
+  padding: 20px;
+  margin-left: 5px;
+}
+
+ion-card {
+  margin: 5px 0px 5px 5px;
+}
+
+.feed-container {
+  margin: 0px;
+  padding: 0px;
+
+  .feed-wrapper {
+    margin-top: 0px;
+    margin-bottom: 6px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    border-radius: 0px;
+
+    .date {
+      font-size: 10px;
+      text-align: right;
+      padding-bottom: 0px;
+    }
+
+    .nickname {
+      font-size: 12px;
+      padding-top: 0px;
+      color: rgb(112, 112, 111);
+    }
+
+    .content {
+      font-size: 14px;
+      color: black;
+    }
+
+    .image {
+      margin-top: 3px;
+    }
+
+    .icon {
+      font-size: 14px;
+      color: grey;
+    }
+
+    .label {
+      font-size: 14px;
+      color: grey;
+      margin-left: 2px;
+    }
+  }
+
+  img {
+    margin-top: 10px;
+    border-radius: 10px;
+    width: 100%;
+    height: 25vh;
+    object-fit: cover;
+    object-position: 50%;
+  }
+}

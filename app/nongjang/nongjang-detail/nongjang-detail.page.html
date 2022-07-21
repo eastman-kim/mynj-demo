@@ -1,0 +1,121 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>farm-detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- farm-img-box -->
+  <ion-grid class="farm-img-box" [ngStyle]="{'background-image': 'url('+this.ithFarmerDetail.farmImg+')'}">
+    <ion-grid class="farm-txt-box">
+      <ion-grid class="farm-txt-wrapper">
+        <p>{{this.ithFarmerDetail.location}}</p>
+        <p>{{this.ithFarmerDetail.locationDesc | truncate: [10] }}</p>
+      </ion-grid>
+      <ion-grid class="icon-wrapper">
+        <ion-icon name="bookmark"></ion-icon>
+      </ion-grid>
+    </ion-grid>
+  </ion-grid>
+
+  <!-- farmer-desc-box -->
+  <ion-grid class="farmer-desc-box mx-2 my-2">
+    <ion-grid class="farmer-upper-box">
+      <ion-grid class="farmer-img-wrapper">
+        <img class="farmer-img" [src]="this.ithFarmerDetail.image">
+      </ion-grid>
+      <ion-grid class="farmer-txt-box">
+        <ion-grid class="farm-txt-wrapper">
+          <p>{{this.ithFarmerDetail.title}}</p>
+          <p>{{this.ithFarmerDetail.avatarSubTitle }}</p>
+        </ion-grid>
+        <ion-grid class="icon-wrapper">
+          <ion-icon name="person-add-outline" class="mr"></ion-icon>
+          <ion-icon name="document-text-outline" class="mr"></ion-icon>
+        </ion-grid>
+      </ion-grid>
+    </ion-grid>
+    <ion-grid class="farmer-lower-box">
+      <ion-grid class="farmer-desc-box">
+        <p>{{this.ithFarmerDetail.title}}</p>
+        <p>{{this.ithFarmerDetail.avatarSubTitle }}</p>
+      </ion-grid>
+      <ion-grid class="farmer-desc-box">
+        <p>{{this.ithFarmerDetail.title}}</p>
+        <p>{{this.ithFarmerDetail.avatarSubTitle }}</p>
+      </ion-grid>
+      <ion-grid class="farmer-desc-box">
+        <p>{{this.ithFarmerDetail.title}}</p>
+        <p>{{this.ithFarmerDetail.avatarSubTitle }}</p>
+      </ion-grid>
+    </ion-grid>
+  </ion-grid>
+
+  <!-- farm-desc -->
+  <ion-grid class="farm-desc mx-3">
+    <p class="h4 mb-3">{{this.ithFarmerDetail.title}}을 소개합니다</p>
+    <p>{{this.ithFarmerDetail.locationDesc }}</p>
+  </ion-grid>
+
+
+  <ngb-accordion #acc="ngbAccordion">
+    <ngb-panel id="toggle-1" title="씨앗">
+      <ng-template ngbPanelContent>
+        <ion-grid class="accordion-wrapper">
+          <ion-grid class="accordion-txt-box">
+            <ion-grid class="accordion-txt-wrapper">
+              <p>{{this.ithFarmerDetail.title}}</p>
+              <p>{{this.ithFarmerDetail.avatarSubTitle | truncate: [10] }}</p>
+              <p>{{this.ithFarmerDetail.avatarSubTitle | truncate: [10] }}</p>
+              <p>{{this.ithFarmerDetail.avatarSubTitle | truncate: [10] }}</p>
+            </ion-grid>
+
+          </ion-grid>
+          <ion-grid class="img-wrapper">
+            <img class="img-box" [src]="this.ithFarmerDetail.image">
+          </ion-grid>
+        </ion-grid>
+      </ng-template>
+    </ngb-panel>
+    <ngb-panel id="toggle-2" title="열매">
+      <ng-template ngbPanelContent>
+        <ion-grid class="accordion-wrapper">
+          <ion-grid class="img-wrapper">
+            <img class="img-box" [src]="this.ithFarmerDetail.image">
+          </ion-grid>
+          <ion-grid class="accordion-txt-box">
+            <ion-grid class="accordion-txt-wrapper">
+              <p>{{this.ithFarmerDetail.title}}</p>
+              <p>{{this.ithFarmerDetail.avatarSubTitle | truncate: [10] }}</p>
+              <p>{{this.ithFarmerDetail.avatarSubTitle | truncate: [10] }}</p>
+              <p>{{this.ithFarmerDetail.avatarSubTitle | truncate: [10] }}</p>
+            </ion-grid>
+
+          </ion-grid>
+        </ion-grid>
+      </ng-template>
+    </ngb-panel>
+    <ngb-panel id="toggle-3" title="체험">
+      <ng-template ngbPanelContent>
+        <ion-grid class="accordion-wrapper">
+
+          <ion-grid class="accordion-txt-box">
+            <ion-grid class="accordion-txt-wrapper">
+              <p>{{this.ithFarmerDetail.title}}</p>
+              <p>{{this.ithFarmerDetail.avatarSubTitle | truncate: [10] }}</p>
+              <p>{{this.ithFarmerDetail.avatarSubTitle | truncate: [10] }}</p>
+              <p>{{this.ithFarmerDetail.avatarSubTitle | truncate: [10] }}</p>
+            </ion-grid>
+
+          </ion-grid>
+          <ion-grid class="img-wrapper">
+            <img class="img-box" [src]="this.ithFarmerDetail.image">
+          </ion-grid>
+        </ion-grid>
+      </ng-template>
+    </ngb-panel>
+  </ngb-accordion>
+
+  <hr />
+
+</ion-content>

@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/town"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="ion-no-padding">
+    <ion-grid class="feed-container">
+      <ion-item>
+        <ion-avatar slot="start">
+          <ion-img src="../../../assets/images/strawberry.jpg"> </ion-img>
+        </ion-avatar>
+          <ion-label>
+            <h2>{{feed.nickname}}</h2>
+            <p>{{feed.date}}</p>
+          </ion-label>
+      </ion-item>
+
+      <ion-grid class="feed-content">
+        <ion-text>{{feed.content}}</ion-text>
+        <img [src]="feed.imgUrl" style="margin: 5px;">
+        <br>
+        <br>
+        <ion-row>
+          <ion-col class="warning-wrapper">
+            <p class="warning-sentence"> * 부적절한 게시글은 마이농장에 알려주세요.</p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-grid>
+        <ion-row>
+          <ion-col class="buttons">
+            <ion-buttons>
+              <ion-button>
+                <ion-icon size="small" name="chatbubble-ellipses-outline" class="icon-color"></ion-icon>
+                <ion-label style="margin-left: 5px;" class="label-color"> {{feed.comments}} </ion-label>
+              </ion-button>
+              <ion-button>
+                <ion-icon size="small" name="heart-circle-outline" class="icon-color"></ion-icon>
+                <ion-label style="margin-left: 5px;" class="label-color"> {{feed.likes}} </ion-label>
+              </ion-button>
+            </ion-buttons>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-grid>
+
+  </ion-grid>
+</ion-content>

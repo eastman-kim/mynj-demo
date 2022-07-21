@@ -1,0 +1,79 @@
+<ion-content>
+  <!-- 인사 & 프로필 -->
+  <ion-grid class="greeting-container">
+    <ion-row>
+      <ion-col class="greeting-wrapper">
+        <ion-text class="text"> 안녕하세요 <b>V</b> 님,</ion-text>
+        <ion-avatar class="avatar" [routerLink]="['/', 'tabs', 'home','profile']">
+          <ion-img src="../../assets/images/farmer.jpg"></ion-img>
+        </ion-avatar>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- 외침 -->
+  <ion-grid class="shoutout-container">
+    <ion-row>
+      <ion-col class="shoutout-wrapper">
+        <h3 class="text"><b> 오늘의 소식입니다! </b></h3>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- 내가 심은 씨앗: 오늘 (temp) -->
+  <ion-grid style="margin-bottom: 15px;">
+    <ion-text class="report-date"> 오늘 </ion-text>
+
+    <ion-grid class="planted-seed-container" *ngFor="let item of items.slice(0,2)">
+      <ion-card class="ion-no-margin">
+        <ion-card-content class="planted-seed-wrapper">
+          <div class="planted-seed-alarm-text-wrapper">
+            <p class="seed-name"> {{item.subtype}} {{item.type}} </p>
+            <p class="alarm-text"> 새로운 재배일지가 올라왔어요! </p>
+          </div>
+          <div class="planted-seed-image-wrapper">
+            <img class="image" [src]="item.imgUrl" />
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </ion-grid>
+  </ion-grid>
+
+  <!-- 내가 심은 씨앗: 2일전(temp) -->
+  <ion-grid style="margin-bottom: 15px;">
+    <ion-text class="report-date"> 2일전 </ion-text>
+    <ion-grid class="planted-seed-container" *ngFor="let item of items.slice(2,4)">
+      <ion-card class="ion-no-margin">
+        <ion-card-content class="planted-seed-wrapper">
+          <div class="planted-seed-alarm-text-wrapper">
+            <p class="seed-name"> {{item.subtype}} {{item.type}} </p>
+            <p class="alarm-text"> 새로운 재배일지가 올라왔어요! </p>
+          </div>
+          <div class="planted-seed-image-wrapper">
+            <img class="image" [src]="item.imgUrl" />
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </ion-grid>
+  </ion-grid>
+
+  <!-- 마이씨앗 -->
+  <ion-grid class="my-seed-container">
+    <ion-text class="my-seed-header"> 마이씨앗 </ion-text>
+
+    <swiper [config]="swiperConfig">
+    <ng-template swiperSlide *ngFor="let item of items">
+      <!-- 씨앗 -->
+      <ion-grid class="my-seed-wrapper" [routerLink]="['/', 'tabs', 'seed', item.id]">
+        <div class="profile">
+          <ion-avatar class="avatar">
+            <ion-img [src]="item.imgUrl"></ion-img>
+          </ion-avatar>
+        </div>
+      </ion-grid>
+    </ng-template>
+    </swiper>
+    </ion-grid>
+
+
+</ion-content>

@@ -1,0 +1,100 @@
+.header-title {
+  font-weight: bold;
+  font-size: 14px;
+  text-align: left;
+  padding: 20px;
+  margin-left: 5px;
+}
+
+.magazine-header {
+  margin-top: 20px;
+  padding-left: 25px;
+  font-weight: bold;
+}
+
+.magazine-container {
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 45px;
+  padding-right: 45px;
+
+  .magazine-wrapper {
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+
+    .cover {
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      box-shadow: 10;
+    }
+
+    .content {
+      display: flex;
+      justify-content: center;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+
+      .profile {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .avatar {
+          width: 40px;
+          height: 40px;
+          margin-left: 6px;
+        }
+
+        p {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}
+
+.magazine-ongoing-container {
+  width: 100%;
+  padding-top: 10px;
+  padding-left: 20px;
+
+  .magazine-wrapper {
+    width: 100%;
+
+    .cover {
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      box-shadow: 10;
+    }
+
+    .content {
+      display: flex;
+      justify-content: center;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+
+      .profile {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .avatar {
+          width: 40px;
+          height: 40px;
+          margin-left: 6px;
+        }
+
+        p {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}
